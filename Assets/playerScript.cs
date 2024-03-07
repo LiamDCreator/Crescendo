@@ -11,6 +11,9 @@ public class playerScript : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundMask;
+    public int crescendoCount;
+
+    public float horizontalInput;
 
     void Start()
     {
@@ -21,16 +24,29 @@ public class playerScript : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
 
-        // Move the player left or right based on input
+       
         transform.Translate(Vector3.right * horizontalInput * moveSpeed * Time.deltaTime);
 
-        // Check if the player is grounded
+      
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundMask);
 
-        // Jump when the spacebar is pressed and the player is grounded
+       
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce); // Set vertical velocity to jump force
+            crescendoCount += 1;
+        }
+        crescendoBuff();
+    }
+    public void crescendoBuff(){
+        if(crescendoCount == 0){
+            moveSpeed = 7;
+        }
+        if(crescendoCount == 1){
+            moveSpeed = 11;
+        }
+        if(crescendoCount == 2){
+            moveSpeed = 15;
         }
     }
 }
