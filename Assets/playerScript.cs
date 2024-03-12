@@ -13,8 +13,6 @@ public class playerScript : MonoBehaviour
     public LayerMask groundMask;
     public int crescendoCount;
 
-    public float horizontalInput;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
