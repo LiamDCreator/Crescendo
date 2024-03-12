@@ -837,7 +837,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  crescendoCount: 0
+  crescendoCount: 15
 --- !u!58 &683590391
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -912,8 +912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aded3315467d0d847ac5ffd01e383f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5898744818383569911, guid: 1d9337b5e4ecfad4187cd3a58b69013e, type: 3}
   shootSpeed: 10
+  bulletPrefab: {fileID: 5898744818383569911, guid: 1d9337b5e4ecfad4187cd3a58b69013e, type: 3}
   shootPoint: {fileID: 134243040}
 --- !u!1 &747427311
 GameObject:
