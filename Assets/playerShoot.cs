@@ -5,16 +5,25 @@ using UnityEngine;
 public class playerShoot : MonoBehaviour
 {
     
-     public float shootSpeed;
+     public float shootSpeedWhistle1;
+     public float shootSpeedWhistle2;
+     public float shootSpeedWhistle3;
 
-      public GameObject bulletPrefab; // The prefab of the bullet object
+     public float shootCooldown;
+      private float shootTimer;
+      public GameObject bulletPrefabWhistle1; // The prefab of the bullet object
+      public GameObject bulletPrefabWhistle2; // The prefab of the bullet object
+      public GameObject bulletPrefabWhistle3; // The prefab of the bullet object
+
     public Transform shootPoint; // The point from which the player will shoot
+    public int whistleCount = 1;
 
     private Vector2 shootDirection = Vector2.right; // Default shooting direction
 
     // Update is called once per frame
     void Update()
     {
+           shootTimer -= Time.deltaTime;
         // Update the shoot direction based on movement keys
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -37,21 +46,36 @@ public class playerShoot : MonoBehaviour
         }
 
         // Check for shooting input
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) && shootTimer <= 0)
         {
             // Shoot in the determined direction
-            Shoot(shootDirection);
+            ShootWhistle1(shootDirection);
+            shootTimer = shootCooldown;
         }
     }
-    void Shoot(Vector2 direction)
+    void ShootWhistle1(Vector2 direction)
     {
-        // Instantiate bullet at the shoot point
-        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
+     if(whistleCount == 1){
+        GameObject bullet = Instantiate(bulletPrefabWhistle1, shootPoint.position, Quaternion.identity);
 
-        // Get the rigidbody of the bullet
+       
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
-        // Apply force to the bullet in the specified direction
-        rb.velocity = shootDirection * shootSpeed; // Adjust the speed as needed
+       
+        rb.velocity = shootDirection * shootSpeedWhistle1; }
+
+     if(whistleCount == 2){  
+        GameObject bullet = Instantiate(bulletPrefabWhistle2, shootPoint.position, Quaternion.identity);
+
+       
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+
+       
+        rb.velocity = shootDirection * shootSpeedWhistle2; }
     }
+    
+     
+
+
+    
 }
