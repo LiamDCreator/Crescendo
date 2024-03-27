@@ -57,24 +57,34 @@ public class playerShoot : MonoBehaviour
     {
      if(whistleCount == 1){
         GameObject bullet = Instantiate(bulletPrefabWhistle1, shootPoint.position, Quaternion.identity);
-
        
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
-       
         rb.velocity = shootDirection * shootSpeedWhistle1; }
+
 
      if(whistleCount == 2){  
         GameObject bullet = Instantiate(bulletPrefabWhistle2, shootPoint.position, Quaternion.identity);
 
+        shootCooldown =0.5f;
+
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+
+        rb.velocity = shootDirection * shootSpeedWhistle2; }
+
+
+         if(whistleCount == 3){  
+        GameObject bullet = Instantiate(bulletPrefabWhistle3, shootPoint.position, Quaternion.identity);
        
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
+        shootCooldown = 0.25f;
        
-        rb.velocity = shootDirection * shootSpeedWhistle2; }
+        rb.velocity = shootDirection * shootSpeedWhistle3; }
     }
     
      
+    
 
 
     
