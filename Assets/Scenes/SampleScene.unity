@@ -743,7 +743,6 @@ GameObject:
   - component: {fileID: 683590391}
   - component: {fileID: 683590390}
   - component: {fileID: 683590393}
-  - component: {fileID: 683590394}
   m_Layer: 0
   m_Name: player 1
   m_TagString: Player
@@ -838,7 +837,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  crescendoCount: 15
+  crescendoCount: 0
 --- !u!58 &683590391
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -922,26 +921,6 @@ MonoBehaviour:
   bulletPrefabWhistle3: {fileID: 558606284205180853, guid: 82e3877a1eeef894093ab72b5a583169, type: 3}
   shootPoint: {fileID: 134243040}
   whistleCount: 1
---- !u!114 &683590394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683590387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: defb65b3022a83046ba891b0e9a09ed3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 10
-  groundCheck: {fileID: 0}
-  groundCheckRadius: 0.2
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 0
-  crescendoCount: 0
 --- !u!1 &747427311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,8 +1126,8 @@ GameObject:
   - component: {fileID: 1720269911}
   - component: {fileID: 1720269910}
   - component: {fileID: 1720269909}
-  - component: {fileID: 1720269908}
-  - component: {fileID: 1720269907}
+  - component: {fileID: 1720269913}
+  - component: {fileID: 1720269914}
   m_Layer: 0
   m_Name: player2
   m_TagString: Player
@@ -1156,47 +1135,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1720269907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720269906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aded3315467d0d847ac5ffd01e383f49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootSpeedWhistle1: 9
-  shootSpeedWhistle2: 15
-  shootSpeedWhistle3: 21
-  shootCooldown: 1
-  bulletPrefabWhistle1: {fileID: 5898744818383569911, guid: 1d9337b5e4ecfad4187cd3a58b69013e, type: 3}
-  bulletPrefabWhistle2: {fileID: 6809850973952263894, guid: 6f3c81c0e41140e4b8a8da9faa400436, type: 3}
-  bulletPrefabWhistle3: {fileID: 558606284205180853, guid: 82e3877a1eeef894093ab72b5a583169, type: 3}
-  shootPoint: {fileID: 1839550975}
-  whistleCount: 1
---- !u!114 &1720269908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720269906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed2cebff15227d64abf52cee9788e06c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 7
-  jumpForce: 12
-  groundCheck: {fileID: 1720269912}
-  groundCheckRadius: 1
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 8
-  crescendoCount: 15
 --- !u!58 &1720269909
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1327,6 +1265,47 @@ Transform:
   - {fileID: 1839550975}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1720269913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720269906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defb65b3022a83046ba891b0e9a09ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 7
+  jumpForce: 12
+  groundCheck: {fileID: 1720269912}
+  groundCheckRadius: 1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 8
+  crescendoCount: 0
+--- !u!114 &1720269914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720269906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc86a1ee3b54c54b97033bccf575c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootSpeedWhistle1: 9
+  shootSpeedWhistle2: 15
+  shootSpeedWhistle3: 21
+  shootCooldown: 1
+  bulletPrefabWhistle1: {fileID: 5898744818383569911, guid: 1d9337b5e4ecfad4187cd3a58b69013e, type: 3}
+  bulletPrefabWhistle2: {fileID: 6809850973952263894, guid: 6f3c81c0e41140e4b8a8da9faa400436, type: 3}
+  bulletPrefabWhistle3: {fileID: 558606284205180853, guid: 82e3877a1eeef894093ab72b5a583169, type: 3}
+  shootPoint: {fileID: 1839550975}
+  whistleCount: 1
 --- !u!1 &1839550974
 GameObject:
   m_ObjectHideFlags: 0

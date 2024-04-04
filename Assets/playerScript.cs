@@ -13,6 +13,7 @@ public class playerScript : MonoBehaviour
     public LayerMask groundMask;
     public int crescendoCount;
 
+    public playerRespawn playerRespawn;
   
     void Start()
     {
