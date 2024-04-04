@@ -13,6 +13,7 @@ public class playerScript : MonoBehaviour
     public LayerMask groundMask;
     public int crescendoCount;
 
+    public playerRespawn playerRespawn;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,9 +34,19 @@ public class playerScript : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce); // Set vertical velocity to jump force
             crescendoCount += 1;
+           
         }
         crescendoBuff();
     }
+    void OnCollisionEnter2D(Collision2D collision)
+        {
+        if (collision.gameObject.CompareTag("bulletP2"))
+        {
+           Debug.Log("yay");
+        }
+        }
+
+    
     public void crescendoBuff(){
         if(crescendoCount == 0){
             moveSpeed = 7;

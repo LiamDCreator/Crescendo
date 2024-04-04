@@ -5,7 +5,7 @@ using UnityEngine;
 public class softPlatformScript : MonoBehaviour
 {
    private Rigidbody2D rb;
-    public string playerTag = "Player";
+    public string playerTag = "player";
 
     // Start is called before the first frame update
     void Start()

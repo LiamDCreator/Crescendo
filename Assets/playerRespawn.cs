@@ -6,15 +6,24 @@ public class playerRespawn : MonoBehaviour
 {
       public Transform[] respawnPoints;
 
+   
+
     void Update()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = GameObject.FindGameObjectWithTag("player");
         if (player != null && player.transform.position.y < -6f)
         {
             Transform closestRespawnPoint = FindClosestRespawnPoint(player.transform.position);
             player.transform.position = closestRespawnPoint.position;
         }
+         GameObject player2 = GameObject.FindGameObjectWithTag("player2");
+        if (player2 != null && player2.transform.position.y < -6f)
+        {
+            Transform closestRespawnPoint = FindClosestRespawnPoint(player2.transform.position);
+            player2.transform.position = closestRespawnPoint.position;
+        }
     }
+    
 
     Transform FindClosestRespawnPoint(Vector3 playerPosition)
     {
@@ -33,4 +42,5 @@ public class playerRespawn : MonoBehaviour
 
         return closestRespawnPoint;
     }
+
 }

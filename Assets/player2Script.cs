@@ -36,6 +36,17 @@ public class playerScript2 : MonoBehaviour
         }
         crescendoBuff();
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+        {
+        if (collision.gameObject.CompareTag("bulletP1"))
+        {
+           Debug.Log("yay");
+            
+        }
+        }
+
+
     public void crescendoBuff(){
         if(crescendoCount == 0){
             moveSpeed = 7;
