@@ -57,7 +57,7 @@ public class player2Shoot : MonoBehaviour
     {
      if(whistleCount == 1){
         GameObject bullet = Instantiate(bulletPrefabWhistle1, shootPoint.position, Quaternion.identity);
-       
+       bullet.tag = "bulletP2";
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
         rb.velocity = shootDirection * shootSpeedWhistle1; }
@@ -65,6 +65,7 @@ public class player2Shoot : MonoBehaviour
 
      if(whistleCount == 2){  
         GameObject bullet = Instantiate(bulletPrefabWhistle2, shootPoint.position, Quaternion.identity);
+       bullet.tag = "bulletP2";
 
         shootCooldown =0.5f;
 
@@ -75,6 +76,7 @@ public class player2Shoot : MonoBehaviour
 
          if(whistleCount == 3){  
         GameObject bullet = Instantiate(bulletPrefabWhistle3, shootPoint.position, Quaternion.identity);
+       bullet.tag = "bulletP2";
        
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
