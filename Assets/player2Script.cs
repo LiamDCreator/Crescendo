@@ -41,7 +41,7 @@ public class playerScript2 : MonoBehaviour
         {
         if (collision.gameObject.CompareTag("bulletP1"))
         {
-           Debug.Log("yay");
+           Debug.Log("yaay");
             
         }
         }

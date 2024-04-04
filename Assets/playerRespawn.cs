@@ -10,7 +10,7 @@ public class playerRespawn : MonoBehaviour
 
     void Update()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("player");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null && player.transform.position.y < -6f)
         {
             Transform closestRespawnPoint = FindClosestRespawnPoint(player.transform.position);
