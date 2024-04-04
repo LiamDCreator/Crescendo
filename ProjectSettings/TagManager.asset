@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - arena
+  - bulletP2
+  - bulletP1
+  - player
+  - player2
   layers:
   - Default
   - TransparentFX

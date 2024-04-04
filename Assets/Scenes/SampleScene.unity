@@ -838,6 +838,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   crescendoCount: 0
+  playerRespawn: {fileID: 0}
 --- !u!58 &683590391
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1130,7 +1131,7 @@ GameObject:
   - component: {fileID: 1720269914}
   m_Layer: 0
   m_Name: player2
-  m_TagString: Player
+  m_TagString: player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
