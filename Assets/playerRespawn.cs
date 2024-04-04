@@ -25,7 +25,7 @@ public class playerRespawn : MonoBehaviour
     }
     
 
-    Transform FindClosestRespawnPoint(Vector3 playerPosition)
+    Transform FindClosestRespawnPoint(Vector3 playerPosition) // look for the closest respawn beacon
     {
         Transform closestRespawnPoint = null;
         float closestDistance = Mathf.Infinity;

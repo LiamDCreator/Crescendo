@@ -11,16 +11,16 @@ public class playerShoot : MonoBehaviour
 
      public float shootCooldown;
       private float shootTimer;
-      public GameObject bulletPrefabWhistle1; // The prefab of the bullet object
-      public GameObject bulletPrefabWhistle2; // The prefab of the bullet object
-      public GameObject bulletPrefabWhistle3; // The prefab of the bullet object
+      public GameObject bulletPrefabWhistle1;
+      public GameObject bulletPrefabWhistle2; 
+      public GameObject bulletPrefabWhistle3; 
 
-    public Transform shootPoint; // The point from which the player will shoot
-    public int whistleCount = 1;
+    public Transform shootPoint; 
+    public int whistleCount = 1; // whislte bullet the player is using. 3 types
 
     private Vector2 shootDirection = Vector2.right; // Default shooting direction
 
-    // Update is called once per frame
+    
     void Update()
     {
            shootTimer -= Time.deltaTime;

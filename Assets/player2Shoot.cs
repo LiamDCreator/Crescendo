@@ -9,11 +9,11 @@ public class player2Shoot : MonoBehaviour
      public float shootSpeedWhistle2;
      public float shootSpeedWhistle3;
 
-     public float shootCooldown;
-      private float shootTimer;
-      public GameObject bulletPrefabWhistle1; // The prefab of the bullet object
-      public GameObject bulletPrefabWhistle2; // The prefab of the bullet object
-      public GameObject bulletPrefabWhistle3; // The prefab of the bullet object
+     public float shootCooldown; // cooldown per shot
+      private float shootTimer; // timer
+      public GameObject bulletPrefabWhistle1;
+      public GameObject bulletPrefabWhistle2; 
+      public GameObject bulletPrefabWhistle3; 
 
     public Transform shootPoint; // The point from which the player will shoot
     public int whistleCount = 1;
@@ -45,11 +45,11 @@ public class player2Shoot : MonoBehaviour
             shootDirection = Vector2.down;
         }
 
-        // Check for shooting input
+       
         if (Input.GetKeyDown(KeyCode.Return) && shootTimer <= 0)
         {
-            // Shoot in the determined direction
-            ShootWhistle1(shootDirection);
+            
+            ShootWhistle1(shootDirection); // shoot
             shootTimer = shootCooldown;
         }
     }

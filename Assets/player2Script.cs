@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class playerScript2 : MonoBehaviour
 {
-      public float moveSpeed = 5f; // Adjust the speed of movement in Unity inspector if needed.
-    public float jumpForce = 10f; // Adjust the jump force in Unity inspector if needed.
+      public float moveSpeed = 5f;
+    public float jumpForce = 10f; 
     private Rigidbody2D rb;
     private bool isGrounded;
     public Transform groundCheck;
@@ -31,20 +31,22 @@ public class playerScript2 : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.RightControl) && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce); // Set vertical velocity to jump force
-            crescendoCount += 1;
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce); // jump
+          
         }
         crescendoBuff();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
         {
-        if (collision.gameObject.CompareTag("bulletP1"))
+        if (collision.gameObject.CompareTag("bulletP1")) 
         {
            Debug.Log("yaay");
             
         }
         }
+
+
 
 
     public void crescendoBuff(){

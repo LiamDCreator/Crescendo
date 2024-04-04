@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class bulletScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+   
    public float bulletTime;
     void Start()
     {
         
-       
-
-
-      
-
         // Ignore collisions with the player
         GameObject player = GameObject.FindGameObjectWithTag("player2");
         if (player != null)
